@@ -1,21 +1,22 @@
 # Arduino-STM32-CAN
-Can communication example for Arduino Core STM32.   
+Basic Extended CAN(BxCan) communication example for Arduino Core STM32.   
 
 
 # Hardware requirements
 
+- STM32F072 Development Board.   
 - STM32F103 Development Board.   
 - STM32F303 Development Board.   
 - STM32F405 Development Board.   
 - STM32F407 Development Board.   
 - STM32F446 Development Board.   
 - CAN Transceiver.   
-MCP2551/2561(5V)   
+MCP2551/2561/2562(5V)   
 TJA1040/1050/1055(5V)   
 SN65HVD230/231/232(3.3V)   
 
 __NOTE__:3V CAN Trasnceviers are fully interoperable with 5V CAN trasnceviers.   
-Check [here](http://e2e.ti.com/cfs-file.ashx/__key/communityserver-discussions-components-files/142/4747.2012_2D00_11_2D00_02-CAN-Transceiver-3V-and-5V-Mixed-Network-Basics.pdf) and [here](http://www.ti.com/lit/an/slla337/slla337.pdf).
+Check [here](http://www.ti.com/lit/an/slla337/slla337.pdf).
 
 
 # Software requirements
@@ -32,6 +33,9 @@ https://github.com/stm32duino/Arduino_Core_STM32
 
 # Transmitter
 
+- from STM32F072   
+![STM32F072_Send](https://user-images.githubusercontent.com/6020549/109580416-e8917380-7b3d-11eb-915e-5d13c6f5fe3f.jpg)
+
 - from STM32F103   
 ![STM32F103_Send](https://user-images.githubusercontent.com/6020549/80896902-3d9e0680-8d2e-11ea-9add-0a102f43c3a7.jpg)
 
@@ -40,6 +44,9 @@ https://github.com/stm32duino/Arduino_Core_STM32
 
 - from STM32F407   
 ![STM32F405_Send](https://user-images.githubusercontent.com/6020549/80896908-45f64180-8d2e-11ea-91a3-c34fdb48725b.jpg)
+
+- from STM32F446   
+![stm32f446_transfer](https://user-images.githubusercontent.com/6020549/110085501-8900c580-7dd4-11eb-9fb7-311c21800719.jpg)
 
 # Receiver   
 Serial printing goes to PA9.   
@@ -120,12 +127,12 @@ There is a module of SN65HVD230 like this.
 There is a __120 ohms__ terminating resistor on the left side.   
 ![SN65HVD230-22](https://user-images.githubusercontent.com/6020549/89281044-74185400-d684-11ea-9f55-830e0e9e6424.JPG)
 
-A transmission error will occur.   
+A transmission fail will occur.   
 ![SendFail](https://user-images.githubusercontent.com/6020549/80897131-98d0f880-8d30-11ea-96b6-05e50ac740a3.jpg)
 
 I have removed the terminating resistor.   
 And I used a external resistance of __150 ohms__.   
-The error is fixed.   
+A transmission fail is fixed.   
 ![SN65HVD230-33](https://user-images.githubusercontent.com/6020549/89280710-f7857580-d683-11ea-9b36-12e36910e7d9.JPG)
 
 # Reference
